@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
-//import { Card } from "react-native-shadow-cards";
 import { useNavigation } from "@react-navigation/native";
 import Dialog from "react-native-dialog";
 import DialogInput from "react-native-dialog/lib/Input";
 
-// import all the components we are going to use
 import {
   SafeAreaView,
   StyleSheet,
@@ -81,8 +79,8 @@ const DetailsScreen = ({ route, navigation }) => {
     fetch("https://jsonplaceholder.typicode.com/posts/comments", {
       method: "POST",
       body: JSON.stringify({
-        title: "aba",
-        body: "bbc",
+        title: "",
+        body: "",
       }),
     })
       .then((response) => response.json())

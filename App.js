@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet } from "react-native";
 
@@ -7,23 +6,39 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import HomeScreen from "./src/screens/HomeScreen";
 import DetailsScreen from "./src/screens/DetailsScreen";
-import ImageScreen from "./src/screens/ImageScreen";
-import { Button } from "react-native-elements";
-import { color } from "react-native-elements/dist/helpers";
+import SplashScreen from "./src/SplashScreen";
+import SignInScreen from "./src/SignInScreen";
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
+
+      
       <Stack.Navigator
         initialRouteName="App_to_Home"
+        
         screenOptions={{
           headerTintColor: "white",
           headerStyle: { backgroundColor: "#21a3ce" },
         }}
       >
-        <Stack.Screen
+         <Stack.Screen
+          name="Splash"
+          
+          component={SplashScreen}
+          options={{headerShown: false}}
+          
+        />
+         <Stack.Screen
+          name="Sign in"
+          
+          component={SignInScreen}
+          options={{headerShown: false}}
+          
+        />
+        {/* <Stack.Screen
           name="App_to_Home"
           component={HomeScreen}
           options={{
@@ -36,9 +51,7 @@ export default function App() {
             },
           }}
         />
-        <Stack.Screen name="Blog Comments" component={DetailsScreen} />
-
-        <Stack.Screen name="BigImageView" component={ImageScreen} />
+        <Stack.Screen name="Blog Comments" component={DetailsScreen} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

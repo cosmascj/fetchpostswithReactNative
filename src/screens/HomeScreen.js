@@ -118,8 +118,8 @@ const HomeScreen = ({ navigation, route }) => {
     fetch("https://jsonplaceholder.typicode.com/posts", {
       method: "POST",
       body: JSON.stringify({
-        title: "aba",
-        body: "bbc",
+        title: "",
+        body: "",
       }),
     })
       .then((response) => response.json())
@@ -151,7 +151,7 @@ const HomeScreen = ({ navigation, route }) => {
         placeholderTextColor={"#000000"}
         backgroundColor={"#21a3ce"}
         underlineColorAndroid="transparent"
-        style={styles.TextInput}
+       // style={styles.TextInput}
         left={
           <TextInput.Icon name={"/Users/mac/BlogApp/assets/searchblack.png"} />
         }
